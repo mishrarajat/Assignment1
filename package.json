@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "body-parser": "*",
+    "consolidate": "*",
+    "express": "~3.4.7",
+    "http": "*",
+    "mongodb": "*",
+    "mongoose": "3.8.16",
+    "path": "*",
+    "request": "*",
+    "underscore": "*",
+    "util": "*"
+  }
+}

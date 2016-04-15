@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="module1/headerView.js" type="text/javascript"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/bin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('myApp', []).controller('UserController',
+        function($scope) {
+            $scope.user = {};
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="container">
+    <form class="form-signin" name="myForm" ng-controller="UserController" novalidate>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="email" ng-model="user.email" id="email" name="uEmail" class="form-control" placeholder="Email" required="" />
+        <br />
+        <div ng-show="myForm.$submitted || myForm.uEmail.$touched">
+            <span class="error-message" ng-show="myForm.uEmail.$error.required">Enter email.</span>
+            <span class="error-message" ng-show="myForm.uEmail.$error.email">Enter a valid email.</span>
+        </div>
+
+        <input type="password" id="pwd" ng-model="user.pwd" class="form-control" placeholder="Password" name="pwd" ng-minlength="12" max="18" required=""/>
+        <div ng-show="myForm.$submitted || myForm.pwd.$touched">
+            <span class="error-message" ng-show="myForm.pwd.$error.required">Enter Password.</span>
+            <span class="error-message" ng-show="myForm.pwd.$error.minlength">The password field should be minimum length of 12 characters.</span>
+        </div>
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In"  id="login"/>
+
+    </form>
+
+</div> <!-- /container -->
+
+
+</body>
+</html>
+
+
+
